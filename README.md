@@ -1,36 +1,21 @@
-**PyPiDisplay [pronounced püpidisplay]**
+**PyPiRfid [pronounced püpirfid]**
 
 
-PyPiDisplay is a very tiny Python Flask Application that aims to proivide an 
-easy way of displaying various stuff on very tiny displays.
+PyPiRfid is a very tiny Python Flask Application that reads RFID tags and provides an API to query serial number of RFID tags, so that other apps can react on them.
 
 Currently it supports:
-* Nokia5110 via Adafruit LCD Library
-* Dummy Display, which does not output on any device but only provides the web interface
-
-**Python 2 vs. Python 3**
-
-The Adafruit library I use to drive the Nokia5110 tiny LCD display is designed to be used with Python2. In case you want to drive a Nokia5110 display with PyPiDisplay and Python3 you need to make sure to adapt the PCD8544 library.
- 
- In this file at or around line 172 in function 'clear', there is a statement like this:
- 
-    self._buffer = [0] * (LCDWIDTH * LCDHEIGHT / 8)
-    
-You will need to change this to read
-
-    self._buffer = [0] * int((LCDWIDTH * LCDHEIGHT / 8))
-
-I included a modified PCD8544.py in package ShowStuff that already incorporates this change.
+* 125KHz RFID Tags
+* RFID Reader of type RDM630 UART 
 
 **Installation**
 
 To make it run check it out from github
 
-    git clone https://github.com/siliconchris1973/PyPiDisplay
+    git clone https://github.com/siliconchris1973/PyPiRfid
 
 cd into directory
 
-    cd PyPiDisplay
+    cd PyPiRfid
 
 install all requirements
 
